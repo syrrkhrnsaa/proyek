@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\KasirController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +28,11 @@ Route::get('/barangs/{barang}/edit', [BarangController::class, 'edit'])->name('b
 Route::put('/barangs/{barang}', [BarangController::class, 'update'])->name('barangs.update');
 Route::delete('/barangs/{barang}', [BarangController::class, 'destroy'])->name('barangs.destroy');
 
+// kasir 
+Route::get('/kasirs', [KasirController::class, 'index'])->name('kasirs.index');
+Route::get('/kasirs/create', [KasirController::class, 'create'])->name('kasirs.create');
+Route::post('/kasirs', [KasirController::class, 'store'])->name('kasirs.store');
+Route::get('/kasirs/{kasir}', [KasirController::class, 'show'])->name('kasirs.show');
+Route::get('/kasirs/{kasir}/edit', [KasirController::class, 'edit'])->name('kasirs.edit');
+Route::put('/kasirs/{kasir}', [KasirController::class, 'update'])->name('kasirs.update');
+Route::delete('/kasirs/{kasir}', [KasirController::class, 'destroy'])->name('kasirs.destroy');

@@ -10,10 +10,9 @@ class Kasir extends Model
     use HasFactory;
 
     protected $table = 'kasirs'; // Menyatakan bahwa model ini terhubung dengan tabel 'kasirs'
-
     protected $fillable = [
-        'KodeKasir',
-        'Nama',
-        'HP',
+        'kode_kasir',
+        'nama',
+        'hp',
     ];
 }

@@ -22,11 +22,11 @@ class BarangController extends Controller
     {
         // Validasi inputan jika diperlukan
         $validatedData = $request->validate([
-            'KodeBarang' => 'required',
-            'NamaBarang' => 'required',
-            'Satuan' => 'required',
-            'HargaSatuan' => 'required',
-            'Stok' => 'required',
+            'kode_barang' => 'required',
+            'nama_barang' => 'required',
+            'satuan' => 'required',
+            'harga_satuan' => 'required',
+            'stok' => 'required',
         ]);
 
         Barang::create($validatedData);
@@ -47,11 +47,11 @@ class BarangController extends Controller
     public function update(Request $request, Barang $barang)
     {
         $validatedData = $request->validate([
-            'KodeBarang' => 'required',
-            'NamaBarang' => 'required',
-            'Satuan' => 'required',
-            'HargaSatuan' => 'required',
-            'Stok' => 'required',
+            'kode_barang' => 'required',
+            'nama_barang' => 'required',
+            'satuan' => 'required',
+            'harga_satuan' => 'required',
+            'stok' => 'required',
         ]);
 
         $barang->update($validatedData);

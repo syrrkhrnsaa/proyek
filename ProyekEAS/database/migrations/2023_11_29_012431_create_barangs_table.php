@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('barangs', function (Blueprint $table) {
             $table->id();
-            $table->string('KodeBarang');
-            $table->string('NamaBarang');
-            $table->string('Satuan');
-            $table->decimal('HargaSatuan', 10, 2); // Angka 10 dan 2 menunjukkan total digit dan jumlah digit di belakang koma
-            $table->integer('Stok')->default(0); // Angka default stok diatur ke 0
+            $table->string('kode_barang');
+            $table->string('nama_barang');
+            $table->string('satuan');
+            $table->decimal('harga_satuan', 10, 2); // Angka 10 dan 2 menunjukkan total digit dan jumlah digit di belakang koma
+            $table->integer('stok')->default(0); // Angka default stok diatur ke 0
             
             $table->timestamps();
         });

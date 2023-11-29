@@ -2,64 +2,70 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Kasir;
 use Illuminate\Http\Request;
+use App\Models\Kasir;
 
 class KasirController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $kasirs = Kasir::all();
+        return view('kasirs.index', compact('kasirs'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return view('kasirs.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'kode_kasir' => 'required',
+            'nama' => 'required',
+            'hp' => 'required',
+        ]);
+
+        $kasir = Kasir::create($validatedData);
+
+        if($kasir){
+            return redirect()->route('kasirs.index')->with('success', 'Kasir berhasil ditambahkan!');
+        } else {
+            return redirect()->route('kasirs.index')->with('error', 'Gagal menambahkan kasir. Silakan coba lagi.');
+        }
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Kasir $kasir)
     {
-        //
+        return view('kasirs.show', ['kasir' => $kasir]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Kasir $kasir)
     {
-        //
+        return view('kasirs.edit', ['kasir' => $kasir]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, Kasir $kasir)
     {
-        //
+        $validatedData = $request->validate([
+            'kode_kasir' => 'required',
+            'nama' => 'required',
+            'hp' => 'required',
+        ]);
+
+        $kasirUpdated = $kasir->update($validatedData);
+
+        if($kasirUpdated){
+            return redirect()->route('kasirs.index')->with('success', 'Kasir berhasil diperbarui!');
+        } else {
+            return redirect()->route('kasirs.index')->with('error', 'Gagal memperbarui kasir. Silakan coba lagi.');
+        }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Kasir $kasir)
     {
-        //
+        $kasir->delete();
+
+        return redirect()->route('kasirs.index')->with('success', 'Kasir berhasil dihapus!');
     }
 }
