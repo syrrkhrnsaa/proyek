@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Nota;
+use App\Models\Tenan;
+use App\Models\Kasir;
 use Illuminate\Http\Request;
 
 class NotaController extends Controller
@@ -10,6 +12,8 @@ class NotaController extends Controller
     public function index()
     {
         $notas = Nota::all(); // Mengambil semua data nota
+        $tenan = Tenan::all(); // Mengambil semua data tenan
+        $kasir = Kasir::all(); // Mengambil semua data kasir
         return view('notas.index', compact('notas')); // Mengirim data ke view
     }
 

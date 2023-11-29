@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\KasirController;
 use App\Http\Controllers\TenanController;
+use App\Http\Controllers\NotaController;
+use App\Http\Controllers\BarangNotaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,3 +48,22 @@ Route::get('/tenans/{tenan}', [TenanController::class, 'show'])->name('tenans.sh
 Route::get('/tenans/{tenan}/edit', [TenanController::class, 'edit'])->name('tenans.edit');
 Route::put('/tenans/{tenan}', [TenanController::class, 'update'])->name('tenans.update');
 Route::delete('/tenans/{tenan}', [TenanController::class, 'destroy'])->name('tenans.destroy');
+
+// nota
+Route::get('/notas', [NotaController::class, 'index'])->name('notas.index');
+Route::get('/notas/create', [NotaController::class, 'create'])->name('notas.create');
+Route::post('/notas', [NotaController::class, 'store'])->name('notas.store');
+Route::get('/notas/{nota}', [NotaController::class, 'show'])->name('notas.show');
+Route::get('/notas/{nota}/edit', [NotaController::class, 'edit'])->name('notas.edit');
+Route::put('/notas/{nota}', [NotaController::class, 'update'])->name('notas.update');
+Route::delete('/notas/{nota}', [NotaController::class, 'destroy'])->name('notas.destroy');
+
+// barangnota
+Route::get('/barang-notas', [BarangNotaController::class, 'index'])->name('barang-notas.index');
+Route::get('/barang-notas/create', [BarangNotaController::class, 'create'])->name('barang-notas.create');
+Route::post('/barang-notas', [BarangNotaController::class, 'store'])->name('barang-notas.store');
+Route::get('/barang-notas/{barangNota}', [BarangNotaController::class, 'show'])->name('barang-notas.show');
+Route::get('/barang-notas/{barangNota}/edit', [BarangNotaController::class, 'edit'])->name('barang-notas.edit');
+Route::put('/barang-notas/{barangNota}', [BarangNotaController::class, 'update'])->name('barang-notas.update');
+Route::delete('/barang-notas/{barangNota}', [BarangNotaController::class, 'destroy'])->name('barang-notas.destroy');
+
