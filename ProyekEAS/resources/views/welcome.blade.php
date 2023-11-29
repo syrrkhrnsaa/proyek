@@ -16,7 +16,7 @@
           <div class="card-body">
             <h5 class="card-title">Kelola Data Barang</h5>
             <p class="card-text">Mengelola informasi mengenai barang-barang yang ada di pujasera.</p>
-            <a href="#" class="btn btn-primary">Kelola Barang</a>
+            <a href="/barangs" class="btn btn-primary">Kelola Barang</a>
           </div>
         </div>
       </div>
@@ -25,7 +25,7 @@
           <div class="card-body">
             <h5 class="card-title">Kelola Data Kasir</h5>
             <p class="card-text">Mengelola informasi mengenai kasir-kasir yang bekerja di pujasera.</p>
-            <a href="#" class="btn btn-primary">Kelola Kasir</a>
+            <a href="/kasirs" class="btn btn-primary">Kelola Kasir</a>
           </div>
         </div>
       </div>
@@ -37,7 +37,7 @@
           <div class="card-body">
             <h5 class="card-title">Kelola Data Tenan</h5>
             <p class="card-text">Mengelola informasi mengenai tenan atau pedagang di pujasera.</p>
-            <a href="#" class="btn btn-primary">Kelola Tenan</a>
+            <a href="/tenans" class="btn btn-primary">Kelola Tenan</a>
           </div>
         </div>
       </div>
@@ -58,7 +58,7 @@
           <div class="card-body">
             <h5 class="card-title">Lihat Struk</h5>
             <p class="card-text">Melihat struk atau rincian transaksi yang sudah dilakukan.</p>
-            <a href="#" class="btn btn-primary">Lihat Struk</a>
+            <a href="/notas" class="btn btn-primary">Lihat Struk</a>
           </div>
         </div>
       </div>
