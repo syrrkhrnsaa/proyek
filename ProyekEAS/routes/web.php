@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\KasirController;
+use App\Http\Controllers\TenanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,3 +37,12 @@ Route::get('/kasirs/{kasir}', [KasirController::class, 'show'])->name('kasirs.sh
 Route::get('/kasirs/{kasir}/edit', [KasirController::class, 'edit'])->name('kasirs.edit');
 Route::put('/kasirs/{kasir}', [KasirController::class, 'update'])->name('kasirs.update');
 Route::delete('/kasirs/{kasir}', [KasirController::class, 'destroy'])->name('kasirs.destroy');
+
+// tenan
+Route::get('/tenans', [TenanController::class, 'index'])->name('tenans.index');
+Route::get('/tenans/create', [TenanController::class, 'create'])->name('tenans.create');
+Route::post('/tenans', [TenanController::class, 'store'])->name('tenans.store');
+Route::get('/tenans/{tenan}', [TenanController::class, 'show'])->name('tenans.show');
+Route::get('/tenans/{tenan}/edit', [TenanController::class, 'edit'])->name('tenans.edit');
+Route::put('/tenans/{tenan}', [TenanController::class, 'update'])->name('tenans.update');
+Route::delete('/tenans/{tenan}', [TenanController::class, 'destroy'])->name('tenans.destroy');

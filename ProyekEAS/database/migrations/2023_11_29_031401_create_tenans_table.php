@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('tenans', function (Blueprint $table) {
             $table->id();
+            $table->string('kode_tenan');
+            $table->string('nama_tenan');
+            $table->string('hp');
             $table->timestamps();
         });
     }

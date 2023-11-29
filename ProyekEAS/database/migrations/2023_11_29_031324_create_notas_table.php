@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('notas', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('kode_tenan')->constrained('tenans')->onDelete('cascade');
+            $table->foreignId('kode_kasir')->constrained('kasirs')->onDelete('cascade');
+            $table->date('tgl_nota');
+            $table->time('jam_nota');
+            $table->decimal('jumlah_belanja', 10, 2);
+            $table->decimal('diskon', 10, 2);
+            $table->decimal('total', 10, 2);
             $table->timestamps();
         });
     }
@@ -25,3 +32,4 @@ return new class extends Migration
         Schema::dropIfExists('notas');
     }
 };
+
